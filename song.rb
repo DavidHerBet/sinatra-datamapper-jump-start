@@ -7,7 +7,7 @@ class Song
   property :title, String
   property :lyrics, Text
   property :length, Integer
-  property :released_on, Date
+  property :released_on, DateTime
   
   def released_on=date
     super Date.strptime(date, '%m/%d/%Y')

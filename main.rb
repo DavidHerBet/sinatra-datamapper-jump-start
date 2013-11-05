@@ -54,10 +54,3 @@ get '/logout' do
   redirect to('/login')
 end
 
-get '/set/:name' do
-  session[:name] = params[:name]
-end
-
-get '/get/hello' do
-  "Hello #{session[:name]}"
-end
