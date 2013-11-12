@@ -5,4 +5,9 @@ nav
     li <a href="/contact" title="Contact">Contact</a>
     li <a href="/songs" title="Songs">Songs</a>
     li <a href="/users" title="Users">Users</a>
+    - if session[:admin] == true
+      li <a href="/state">#{settings.username}</a>
+    - else
+      li <a href="/state">User not admin</a>
+
 

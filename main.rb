@@ -51,6 +51,12 @@ post '/login' do
   end
 end
 
+get '/state' do
+  if session[:admin] == true then
+    "#{settings.username}"
+  end
+end
+
 get '/logout' do
   session.clear
   redirect to('/login')
