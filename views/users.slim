@@ -1,0 +1,8 @@
+h1 Users
+a href="/users/new" Create a new user
+- if @users.any?
+  ul#users
+    -@users.each do |user|
+      li <a href="/users/#{user.id}">#{user.username}</a>
+- else
+  p No users have been created yet!

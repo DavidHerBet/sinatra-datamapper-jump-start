@@ -1,0 +1,4 @@
+h1 Edit User
+form method="POST" action="/users/#{@user.id}"
+  input type="hidden" name="_method" value="PUT"
+  == slim :user_form

@@ -1,0 +1,7 @@
+label for="username" Username:
+input#title type="text" name="user[username]" value="#{@user.username}"
+label for="password" Password:
+input#length type="password" name="user[password]" value="#{@user.password}"
+label for="released_on" Date(mm/dd/yyyy):
+input#released_on type="text" name="user[released_on]" value="#{@user.released_on.strftime("%m/%d/%Y") if @user.released_on}"
+input type="submit" value="Save User"
