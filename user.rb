@@ -7,6 +7,10 @@ class User
   property :username, String
   property :password, String
   property :released_on, DateTime
+
+  def released_on=date
+    super Date.strptime(date, '%m/%d/%Y')
+  end
 end
 
 DataMapper.finalize
@@ -21,17 +25,17 @@ get '/users' do
   slim :users
 end
 
-get '/user/new' do
+get '/users/new' do
   @user = User.new
   slim :new_user
 end
 
-get '/user/:id' do |id|
-  @song = Song.get(id)
+get '/users/:id' do |id|
+  @user = User.get(id)
   slim :show_user
 end
 
-get '/user/:id/edit' do
+get '/users/:id/edit' do
   @user = User.get(params[:id])
   slim :edit_user
 end
