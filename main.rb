@@ -2,6 +2,8 @@ require 'sinatra'
 require 'slim'
 require 'sass'
 require './song'
+require './user'
+
 
 configure do
   enable :sessions
@@ -53,4 +55,3 @@ get '/logout' do
   session.clear
   redirect to('/login')
 end
-
