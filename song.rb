@@ -22,6 +22,10 @@ end
 
 DataMapper.finalize
 
+DataMapper.setup(:default,'sqlite:development.db')
+
+DataMapper.auto_migrate!
+
 get '/songs' do
   @songs = Song.all
   slim :songs
